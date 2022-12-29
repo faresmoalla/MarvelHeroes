@@ -15,6 +15,10 @@ import {HttpClientModule} from '@angular/common/http';
     NgbModule,
     HttpClientModule
   ],
+  exports: [
+    MarvelHeroesComponent
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

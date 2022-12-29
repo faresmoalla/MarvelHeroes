@@ -1,1 +1,61 @@
-<p>marvel-heroes works!</p>
+
+
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="https://1000logos.net/wp-content/uploads/2021/06/Marvel-Comics-logo.png" alt="" style="height: 45px; width: 100px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li  class="nav-item">
+            <a id="aa"class="nav-link active" aria-current="page" href="#">Heroes</a>
+          </li>
+          
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <hr style="color: #22262A; margin: 0; height: 2px;">
+  <div class="jumbotron">
+    <div class="container">
+      
+      <h1 class="header-main-title">Search</h1>
+      
+
+        <div class="form-group">
+          <input type="text" name="name" id="name" class="form-control character-search-box"
+            placeholder="Hero Name" (keyup)="findHero($event.target.value)" >
+        </div>
+        <!--input type="submit" value="Search!" class="btn btn-danger mb-2 float-right search-character-button" id="submit"-->
+
+      
+      <div id="cards-group"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5" >
+    <h4>Marvel Heroes</h4>
+    <div class="row">
+      <div
+        class="col-lg-3 mt-3 mb-3"
+        *ngFor="let characters of listHeroes"
+      >
+        <div class="card">
+          <img src="{{characters.thumbnail.path +'/standard_medium.'+characters.thumbnail.extension}}" width="100%" class="card-img-top" alt="Some Issue Loading Image..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ characters.name }}</h5>
+    
+          </div>
+        </div>
+    
+    
+    
+    
+      </div>
+    </div>
+   
+    </div>
+    
