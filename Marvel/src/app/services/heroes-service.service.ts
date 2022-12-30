@@ -19,19 +19,11 @@ number:number = 0;
 list : any[]  = [];
 url = `http://gateway.marvel.com/v1/public/characters?limit=100&orderBy=name&offset=${this.number}&ts=1&apikey=d8d95bf1ada42023ae168922f0ceff66&hash=a8d715a0464ea40033ca53eb9450a523`;
 url1 = "http://gateway.marvel.com/v1/public/characters?limit=100&orderBy=name&offset=100&ts=1&apikey=d8d95bf1ada42023ae168922f0ceff66&hash=a8d715a0464ea40033ca53eb9450a523";
- observable = new Observable<any>;
- observable2 = new Observable<any>;
- observable3 = new Observable<any>;
+
 allHeroes():Observable<any>
 {
 
 
- 
-  
-  this.observable3=
-  concat (this.http.get(`http://gateway.marvel.com/v1/public/characters?limit=100&orderBy=name&offset=0&ts=1&apikey=d8d95bf1ada42023ae168922f0ceff66&hash=a8d715a0464ea40033ca53eb9450a523`)  ,
-  this.http.get(`http://gateway.marvel.com/v1/public/characters?limit=100&orderBy=name&offset=100&ts=1&apikey=d8d95bf1ada42023ae168922f0ceff66&hash=a8d715a0464ea40033ca53eb9450a523`));
-console.log("//////"+this.observable3);
   return   concat (this.http.get("http://gateway.marvel.com/v1/public/characters?limit=100&offset=0&ts=1&apikey=d8d95bf1ada42023ae168922f0ceff66&hash=a8d715a0464ea40033ca53eb9450a523")  ,
   this.http.get("http://gateway.marvel.com/v1/public/characters?limit=100&offset=200&ts=1&apikey=d8d95bf1ada42023ae168922f0ceff66&hash=a8d715a0464ea40033ca53eb9450a523"),
 

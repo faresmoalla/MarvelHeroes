@@ -12,7 +12,7 @@ constructor(private service:HeroesServiceService){}
 listHeroes:any=[]
 characterName:string;
 hero:any=[]
- searchText;
+
 
 
  playSound(){
@@ -23,6 +23,9 @@ hero:any=[]
  audio.load();
  audio.play();
 }
+
+
+
 ngOnInit(): void{
   let audio = new Audio()
   audio.src= "../assets/confirm2.mp3"
