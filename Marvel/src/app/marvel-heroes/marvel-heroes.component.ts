@@ -12,27 +12,46 @@ constructor(private service:HeroesServiceService){}
 listHeroes:any=[]
 characterName:string;
 hero:any=[]
+ searchText;
 
+
+ playSound(){
+
+
+ let audio = new Audio()
+ audio.src= "../assets/confirm2.mp3"
+ audio.load();
+ audio.play();
+}
 ngOnInit(): void{
+  let audio = new Audio()
+  audio.src= "../assets/confirm2.mp3"
+  audio.load();
+  audio.play();
 
+
+
+  
   this.service.allHeroes().subscribe((result)=>{
     console.log(result);
-    this.listHeroes= result.data.results;
+  
+
+   this.listHeroes= result.data.results;
   })
+
+
+
+
 }
 
-applyFilter(filterValue: string) {
-  filterValue = filterValue.trim(); // Remove whitespace
-  filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-  this.dataSource.filter = filterValue;
-}
+
 
 findHero(event:any)
 {
    this.characterName = event.target.value;
    
    this.service.getHero(this.characterName).subscribe((result)=>{
-    console.log("////////////////"+result);
+    
   
      
        this.hero = result.data.results;
